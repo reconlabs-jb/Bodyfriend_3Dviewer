@@ -3,31 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quantum 3D Viewer</title>
-    <script type='module' src='https://prod-assets.plicar.io/script/plicar-viewer.min.js'></script>
+    <title>바디프랜드 애니메이션 250328</title>
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            box-sizing: border-box;
         }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .animation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .animation-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .animation-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .animation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .animation-title {
+            padding: 1rem;
+            font-size: 1.25rem;
+            text-align: center;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .animation-viewer {
+            height: 400px;
+            width: 100%;
+            position: relative;
+        }
+        
         plicarzero-viewer {
             width: 100%;
-            height: 100vh;
+            height: 100%;
             display: block;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: white;
+            margin-top: 3rem;
         }
     </style>
 </head>
 <body>
-    <plicarzero-viewer 
-        viewer-uid="DmgO-HbwCOZcM5XskUBOu"
-        camera-controls 
-        autoplay
-        exposure="1" 
-        environment-image="neutral" 
-        style="touch-action: none;">
-    </plicarzero-viewer>
+    <header>
+        <div class="container">
+            <h1>바디프랜드 애니메이션 250328</h1>
+            <p class="subtitle">3D 모델 갤러리</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="animation-grid">
+            <!-- 퀀텀 애니메이션 -->
+            <div class="animation-card">
+                <div class="animation-title">퀀텀 애니메이션</div>
+                <div class="animation-viewer">
+                    <script type='module' src='https://prod-assets.plicar.io/script/plicar-viewer.min.js'></script>
+                    <plicarzero-viewer viewer-uid=DmgO-HbwCOZcM5XskUBOu camera-controls autoplay exposure='1' environment-image='neutral' style="touch-action: none; width: 100%; height: 100%;">
+                    </plicarzero-viewer>
+                </div>
+            </div>
+
+            <!-- 파라오네오 애니메이션 -->
+            <div class="animation-card">
+                <div class="animation-title">파라오네오 애니메이션</div>
+                <div class="animation-viewer">
+                    <script type='module' src='https://prod-assets.plicar.io/script/plicar-viewer.min.js'></script>
+                    <plicarzero-viewer viewer-uid=mDwSE44z_bSxOckKvgXng camera-controls autoplay exposure='1' environment-image='neutral' style="touch-action: none; width: 100%; height: 100%;">
+                    </plicarzero-viewer>
+                </div>
+            </div>
+
+            <!-- 메디컬 파라오 애니메이션 -->
+            <div class="animation-card">
+                <div class="animation-title">메디컬 파라오 애니메이션</div>
+                <div class="animation-viewer">
+                    <script type='module' src='https://prod-assets.plicar.io/script/plicar-viewer.min.js'></script>
+                    <plicarzero-viewer viewer-uid=wy0Natf-UWu38cN22mmDG camera-controls autoplay exposure='1' environment-image='neutral' style="touch-action: none; width: 100%; height: 100%;">
+                    </plicarzero-viewer>
+                </div>
+            </div>
+
+            <!-- 팔콘 SV 애니메이션 -->
+            <div class="animation-card">
+                <div class="animation-title">팔콘 SV 애니메이션</div>
+                <div class="animation-viewer">
+                    <script type='module' src='https://prod-assets.plicar.io/script/plicar-viewer.min.js'></script>
+                    <plicarzero-viewer viewer-uid=XdgVPKAgZcW7ExvBD6wPQ camera-controls autoplay exposure='1' environment-image='neutral' style="touch-action: none; width: 100%; height: 100%;">
+                    </plicarzero-viewer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 바디프랜드. 모든 권리 보유.</p>
+        </div>
+    </footer>
 </body>
-</html> 
+</html>
